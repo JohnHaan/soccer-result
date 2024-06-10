@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚽️ 우성배쟁탈 교구친선 풋살리그 ⚽️</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        .tabs, .match-tabs {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .tab, .match-tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+        }
+        .tab.active, .match-tab.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        function showQuarter(quarter) {
+            var quarters = document.querySelectorAll('.quarter');
+            var tabs = document.querySelectorAll('.tab');
+            quarters.forEach(function(div) {
+                div.classList.add('hidden');
+            });
+            tabs.forEach(function(tab) {
+                tab.classList.remove('active');
+            });
+            document.getElementById('quarter' + quarter).classList.remove('hidden');
+            tabs[quarter - 1].classList.add('active');
+        }
+    </script>
+    <script>
+        function showMatch(match) {
+            var matches = document.querySelectorAll('.match');
+            var tabs = document.querySelectorAll('.match-tab');
+            matches.forEach(function(div) {
+                div.classList.add('hidden');
+            });
+            tabs.forEach(function(tab) {
+                tab.classList.remove('active');
+            });
+            document.getElementById('match' + match).classList.remove('hidden');
+            tabs[match - 1].classList.add('active');
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>⚽️ 우성배쟁탈 교구친선 풋살리그 ⚽️</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>순위</th>
+                    <th>팀명</th>
+                    <th>경기수</th>
+                    <th>승리</th>
+                    <th>무승부</th>
+                    <th>패배</th>
+                    <th>득점</th>
+                    <th>실점</th>
+                    <th>득실차</th>
+                    <th>승점</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="highlight">1</td>
+                    <td>드림위너스</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td class="highlight">2</td>
+                    <td>블레시드</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td class="highlight">2</td>
+                    <td>이글스</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td class="highlight">4</td>
+                    <td>코람데오</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>-1</td>
+                    <td>0</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="match-tabs">
+            <div class="match-tab active" onclick="showMatch(1)">1경기</div>
+            <div class="match-tab" onclick="showMatch(2)">2경기</div>
+        </div>
+        <div id="match1" class="match">
+            <h2>1경기: 블레시드 vs 이글스</h2>
+            <table>
+                <tr>
+                    <th>블레시드</th>
+                    <th>항목</th>
+                    <th>이글스</th>
+                </tr>
+                <tr>
+                    <td>신지후, 나유선, 임승수, 권석현, 나영훈(자책)</td>
+                    <td>득점</td>
+                    <td>현시준, 김예성, 손광섭</td>
+                </tr>
+                <tr>
+                    <td>48%</td>
+                    <td>점유율</td>
+                    <td>52%</td>
+                </tr>
+                <tr>
+                    <td>25</td>
+                    <td>슈팅</td>
+                    <td>18</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>유효슈팅</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>92</td>
+                    <td>패스</td>
+                    <td>123</td>
+                </tr>
+                <tr>
+                    <td>71%</td>
+                    <td>패스성공율</td>
+                    <td>70%</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>코너킥</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>파울</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>0/0</td>
+                    <td>경고/퇴장</td>
+                    <td>1/0</td>
+                </tr>
+            </table>
+        </div>
+        <div id="match2" class="match hidden">
+            <h2>2경기: 드림위너스 vs 코람데오</h2>
+            <table>
+                <tr>
+                    <th>드림위너스</th>
+                    <th>항목</th>
+                    <th>코람데오</th>
+                </tr>
+                <tr>
+                    <td>이고은(2), 최동우, 정훈</td>
+                    <td>득점</td>
+                    <td>양민우, 홍지용, 윤여용</td>
+                </tr>
+                <tr>
+                    <td>40%</td>
+                    <td>점유율</td>
+                    <td>60%</td>
+                </tr>
+                <tr>
+                    <td>27</td>
+                    <td>슈팅</td>
+                    <td>29</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>유효슈팅</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>113</td>
+                    <td>패스</td>
+                    <td>118</td>
+                </tr>
+                <tr>
+                    <td>71%</td>
+                    <td>패스성공율</td>
+                    <td>85%</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>코너킥</td>
+                    <td>7</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>파울</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>1/0</td>
+                    <td>경고/퇴장</td>
+                    <td>1/0</td>
+                </tr>
+            </table>
+        </div>       
+        
+        <div class="tabs">
+            <div class="tab active" onclick="showQuarter(1)">1쿼터</div>
+            <div class="tab" onclick="showQuarter(2)">2쿼터</div>
+            <div class="tab" onclick="showQuarter(3)">3쿼터</div>
+            <div class="tab" onclick="showQuarter(4)">4쿼터</div>
+        </div>
+        
+        <div id="quarter1" class="quarter">
+            <h2>1쿼터 득점 순위</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>순위</th>
+                        <th>선수명</th>
+                        <th>팀명</th>
+                        <th>득점</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>김예성</td>
+                        <td>이글스</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>신지후</td>
+                        <td>블레시드</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>현시준</td>
+                        <td>이글스</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>양민우</td>
+                        <td>코람데오</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>홍지용</td>
+                        <td>코람데오</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>1쿼터 어시스트 순위</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>순위</th>
+                        <th>선수명</th>
+                        <th>팀명</th>
+                        <th>어시스트</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>강선율</td>
+                        <td>블레시드</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>김예성</td>
+                        <td>이글스</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>1쿼터 골레이로 슈퍼세이브 순위</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>순위</th>
+                        <th>선수명</th>
+                        <th>팀명</th>
+                        <th>슈퍼세이브</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>이도엘</td>
+                        <td>이글스</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>엄태민</td>
+                        <td>드림위너스</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>1쿼터 퇴장/경고/파울 순위</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>순위</th>
+                        <th>선수명</th>
+                        <th>팀명</th>
+                        <th>퇴장</th>
+                        <th>경고</th>
+                        <th>파울</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+
+        <div id="quarter2" class="quarter hidden">
+            <h2>2쿼터 득점 순위</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>순위</th>
+                        <th>선수명</th>
+                        <th>팀명</th>
+                        <th>득점</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>이고은</td>
+                        <td>드림위너스</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>나유선</td>
+                        <td>블레시드</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>2쿼터 어시스트 순위</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>순위</th>
+                        <th>선수명</th>
+                        <th>팀명</th>
+                        <th>어시스트</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>김서희</td>
+                        <td>드림위너스</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>2쿼터 골레이로 슈퍼세이브 순위</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>순위</th>
+                        <th>선수명</th>
+                        <th>팀명</th>
+                        <th>슈퍼세이브</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>안은미</td>
+                        <td>이글스</td>
+                        <td>2</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>2쿼터 퇴장/경고/파울 순위</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>순위</th>
+                        <th>선수명</th>
+                        <th>팀명</th>
+                        <th>퇴장</th>
+                        <th>경고</th>
+                        <th>파울</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+
+        <div id="quarter3" class="quarter hidden">
+            <h2>3쿼터 득점 순위</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>순위</th>
+                        <th>선수명</th>
+                        <th>팀명</th>
+                        <th>득점</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>임승수</td>
+                        <td>블레시드</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>손광섭</td>
+                        <td>이글스</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>최동우</td>
+                        <td>드림위너스</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>윤여용</td>
+                        <td>코람데오</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>3쿼터 어시스트 순위</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>순위</th>
+                        <th>선수명</th>
+                        <th>팀명</th>
+                        <th>어시스트</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>한승진</td>
+                        <td>이글스</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>3쿼터 골레이로 슈퍼세이브 순위</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>순위</th>
+                        <th>선수명</th>
+                        <th>팀명</th>
+                        <th>슈퍼세이브</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>장지운</td>
+                        <td>코람데오</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>이춘복</td>
+                        <td>이글스</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>박종민</td>
+                        <td>드림위너스</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>3쿼터 퇴장/경고/파울 순위</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>순위</th>
+                        <th>선수명</th>
+                        <th>팀명</th>
+                        <th>퇴장</th>
+                        <th>경고</th>
+                        <th>파울</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>최동우</td>
+                        <td>드림위너스</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>강신욱</td>
+                        <td>코람데오</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>박효재</td>
+                        <td>이글스</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>권두호</td>
+                        <td>블레시드</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>이영민</td>
+                        <td>블레시드</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>손광섭</td>
+                        <td>이글스</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>강윤성</td>
+                        <td>드림위너스</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>윤여용</td>
+                        <td>코람데오</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="quarter4" class="quarter hidden">
+            <h2>4쿼터 득점 순위</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>순위</th>
+                        <th>선수명</th>
+                        <th>팀명</th>
+                        <th>득점</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>권석현</td>
+                        <td>블레시드</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>정 훈</td>
+                        <td>드림위너스</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>4쿼터 어시스트 순위</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>순위</th>
+                        <th>선수명</th>
+                        <th>팀명</th>
+                        <th>어시스트</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 4쿼터 어시스트 순위 데이터 -->
+                </tbody>
+            </table>
+            <h2>4쿼터 골레이로 슈퍼세이브 순위</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>순위</th>
+                        <th>선수명</th>
+                        <th>팀명</th>
+                        <th>슈퍼세이브</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>곽주현</td>
+                        <td>이글스</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>김현서</td>
+                        <td>드림위너스</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>4쿼터 퇴장/경고/파울 순위</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>순위</th>
+                        <th>선수명</th>
+                        <th>팀명</th>
+                        <th>퇴장</th>
+                        <th>경고</th>
+                        <th>파울</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>윤이선</td>
+                        <td>블레시드</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>유경수</td>
+                        <td>코람데오</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>               
+        <div class="info">
+            <h3>🏆 챔피언결정전 진출 기준</h3>
+            <div style="border: 2px solid #2196F3; padding: 10px; border-radius: 5px; background-color: #e7f3fe;">
+                <p>1. 승점</p>
+                <p>2. 골득실</p>
+                <p>3. 다득점</p>
+                <p>4. 상대전적</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
